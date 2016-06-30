@@ -5,8 +5,12 @@ else
 fi
 
 if [ -d "$HOME/dotfiles" ]; then
+	cp -r ~/dotfiles/. ~
+	rm -rf ~/.git
 	echo Dotfiles OK
 else
 	git clone https://github.com/qleguennec/dotfiles.git ~/dotfiles
-	cp -r ~/dotfiles/* ~
+	cp -r ~/dotfiles/. ~
+	rm -rf ~/.git
+	echo Dotfiles OK
 fi
